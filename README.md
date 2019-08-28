@@ -34,20 +34,18 @@ The first week will take the basic dataset above to address the following key qu
 ##### Do fish prefer areas of fast/slow water, and likewise deep/shallow water?
 
 - Also, depth may be related to velocity, which may be related to dominant substrate type (higher velocity = larger substrate particles)
+
 - Or, do fish just use the available habitat in the proportions that it is available?
 
 #### The data is a little more complex:
 
-The first few rows are where fish were released
-(batch-released at a few locations)
+The first few rows are where fish were released (batch-released at a few locations)
 
 ![1566965819084](resources/hugh-release-captures.png)
 
 #### And a bit more:
 
-Then, when fish are 
-located habitat variables are recorded (initially only for pass 1, but
-later for both passes 1 and 2)
+Then, when fish are located habitat variables are recorded (initially only for pass 1, but later for both passes 1 and 2)
 
 ![1566965928817](resources/hugh-lat-long.png)
 
