@@ -3,8 +3,6 @@ This file is defined as the `README.md` file and on a `github` account as long a
 
 ## Week one
 
-
-
 ![1566965493373](resources/hugh-data.png)
 
 #### The data is a little more complex:
@@ -27,8 +25,6 @@ This readme can function as the home-page of a project site in `github` using `g
 ##### Or, habitat variables are recorded in the ‘available’ locations
 
 ![1566966011667](resources/morehugh-lat-long.png)
-
-
 
 ## Key questions
 
