@@ -1,0 +1,27 @@
+---
+title: "Hughs project"
+author: "Statistical coding group"
+date: "21/08/2019"
+output: 
+  word_document:
+    reference_docx: ms.docx
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r libraries}
+
+library(ggplot2)
+library(tidyverse)
+library(DT)
+library(plotly)
+```
+
+## Data import
+
+```{r}
+dat <- read_csv("./data/tracking_master_20190708.csv")
+```
+
