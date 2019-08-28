@@ -13,7 +13,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r libraries}
 
-library(ggplot2)
 library(tidyverse)
 library(DT)
 library(plotly)
@@ -23,5 +22,92 @@ library(plotly)
 
 ```{r}
 dat <- read_csv("./data/tracking_master_20190708.csv")
+```
+
+## Session work
+
+```{r}
+# Anthony
+# date
+#...
+
+#library
+library(tidyverse)
+
+# import 
+dat <- read.csv("data/tracking_master_20190708.csv")
+
+# data structure
+glimpse(dat)
+
+
+# no of fish
+  count(distinct(dat, tag), na.rm = T) # sums the number of fish we caught (74)
+# provides number of "random" sampled points  
+  table(dat$tag, exclude = NULL) # counts all the fish and 
+  table(table(dat$tag, exclude = NULL))
+  barplot(table(dat$tag)) # individual fish by tag number by frequency
+  
+  sum(table(table(dat$tag)))
+  
+# base r language:
+  table(is.na(dat$tag))
+  
+# number of fish observations by non-fish observations  
+  dat %>% group_by(is.na(tag)) %>%
+          summarise(n = n())
+  
+# base r language: mean(dat$tag)
+# tidyverse: dat %>% mean(tag)
+  
+#   Do they prefer boulders?
+  
+  ##assumed to be in same pass
+  # second pass = distrubed
+  
+  table(dat$pass)
+
+  # hist(dat$br, breaks = 30)
+  
+  #NA  = zero
+  #hadley drama
+  dat1 <- dat %>%
+    mutate_at(vars(br:silt),funs(replace(.,is.na(.),0)))
+  
+  table(dat1$br)
+  # tidy as
+
+  #no zeros
+glimpse(dat1)              
+
+dat1$fish <- ifelse(is.na(dat1$tag), "avaliable", "fish")
+# histogram of fish 
+
+ggplot(dat1, aes(x = b)) +
+  geom_histogram() + 
+  facet_wrap(~fish, scale = "free_y", ncol = 1)  +
+  theme_bw()
+
+#many many zeros
+# change to grouping
+
+str(dat1$b)
+
+
+dat1$b.pa <- ifelse(dat1$silt > 0, 1, 0)
+
+    names(dat1)
+tab1 <- table(dat1$fish, dat1$b.pa)
+tab1
+
+#ratios of presence/absents
+tab1[,2]/rowSums(tab1)
+
+chisq.test(tab1)
+
+ggplot(dat1, aes(x = silt)) +
+  geom_histogram() + 
+  facet_wrap(~fish, scale = "free_y", ncol = 1)  +
+  theme_bw()
 ```
 
