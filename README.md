@@ -5,15 +5,21 @@ This file is defined as the `README.md` file and on a `github` account as long a
 
 Download the file as a zip as below:
 
-![]()
+![1566967229323](resources/download.png)
 
-Or fork it from your github account if you have already got one:
+Or fork it from your `github` account if you have already got one
 
-![]()
+![1566967274706](resources/fork.png)
 
-YOu need the following packages:
+You need the following packages (I have probably forgotten some:
 
-![]()
+- ` bookdown`
+
+- `tidyverse`
+
+- `ggplot2`
+
+
 
 # Key questions
 
