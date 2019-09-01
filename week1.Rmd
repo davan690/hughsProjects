@@ -72,7 +72,8 @@ glimpse(dat)
   #NA  = zero
   #hadley drama
   dat1 <- dat %>%
-    mutate_at(vars(br:silt),funs(replace(.,is.na(.),0)))
+    mutate_at(vars(br:silt),
+              funs(replace(.,is.na(.),0)))
   
   table(dat1$br)
   # tidy as
@@ -83,7 +84,7 @@ glimpse(dat1)
 dat1$fish <- ifelse(is.na(dat1$tag), "avaliable", "fish")
 # histogram of fish 
 
-ggplot(dat1, aes(x = b)) +
+ggplot(dat1, aes(x = br)) +
   geom_histogram() + 
   facet_wrap(~fish, scale = "free_y", ncol = 1)  +
   theme_bw()
